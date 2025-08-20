@@ -41,14 +41,14 @@ useEffect(()=>{
 },[])
 
 return(
-  <div>
-    <h2 className="flex items center justify-center mt-5 text-3xl font-bold">Movie List</h2>
-    <div className="grid grid-cols-3 gap-5 p-8 mt-2">
+  <div className="min-h-screen bg-gray-50">
+    <h2 className="flex items-center justify-center mt-5 text-2xl md:text-3xl font-bold text-gray-800">Movie List</h2>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
       {movies.map((m)=>(
-        <div key={m.imdbID} className="border border-gray-300 bg-blue-100 space-y-5 shadow-lg rounded-md">
-          <h3>{m.Title} </h3>
-          <img src={m.Poster} alt={m.Title} className="w-80 h-50" />
-          <div>
+        <div key={m.imdbID} className="border border-gray-200 bg-white shadow-md rounded-xl p-4 hover:shadow-xl transition">
+          <h3 className="mt-3 text-lg font-semibold text-gray-700">{m.Title} </h3>
+          <img src={m.Poster} alt={m.Title} className="w-full h-64 object-cover rounded-lg" />
+          <div className="mt-2 text-sm text-gray-600">
             <p> Year: {m.Year} | Type {m.Type} </p>
             <p>IMDBID{m.imdbID} </p>
           </div>         
